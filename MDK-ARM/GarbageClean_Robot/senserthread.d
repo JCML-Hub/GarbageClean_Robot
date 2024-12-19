@@ -1,5 +1,10 @@
 garbageclean_robot/senserthread.o: ..\Thread\SenserThread.c \
-  ..\Thread\SenserThread.h ..\Core\Inc\main.h \
+  ..\Thread\SenserThread.h \
+  ..\Middleware\RealThread_RTOS\include\rtthread.h \
+  ..\Middleware\RealThread_RTOS\rtconfig.h \
+  ..\Middleware\RealThread_RTOS\include\rtdebug.h \
+  ..\Middleware\RealThread_RTOS\include\rtdef.h \
+  ..\Middleware\RealThread_RTOS\include\rtservice.h ..\Core\Inc\main.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h \
   ..\Core\Inc\stm32f1xx_hal_conf.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h \
@@ -23,9 +28,4 @@ garbageclean_robot/senserthread.o: ..\Thread\SenserThread.c \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h \
-  ..\Middleware\RealThread_RTOS\include\rtthread.h \
-  ..\Middleware\RealThread_RTOS\rtconfig.h \
-  ..\Middleware\RealThread_RTOS\include\rtdebug.h \
-  ..\Middleware\RealThread_RTOS\include\rtdef.h \
-  ..\Middleware\RealThread_RTOS\include\rtservice.h \
   ..\MyDrivers\INA219.h ..\Core\Inc\i2c.h ..\Core\Inc\usart.h
