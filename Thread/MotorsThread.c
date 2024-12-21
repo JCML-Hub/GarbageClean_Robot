@@ -14,7 +14,7 @@
 #include "main.h"
 #include "rtthread.h"
 
-
+Motor_t Motor[4];
 
 
 //传感器数据接收线程
@@ -26,4 +26,11 @@ void MotorsThread_entry(void *parameter){
 
     rt_thread_delay(200);
   }
+}
+
+void GetEncode(void){
+  // Motor[0].Encoder = (int16_t)(TIM3->CCR1);
+  // Motor[1].Encoder = (int16_t)(TIM3->CCR2);
+  // Motor[2].Encoder = (int16_t)(TIM3->CCR3);
+  // Motor[3].Encoder = (int16_t)(TIM3->CCR4);
 }
