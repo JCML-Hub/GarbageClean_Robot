@@ -9,6 +9,8 @@
 #define MOTOR_PROPLE_B  1   //推进电机B
 #define MOTOR_DRIVER    2   //拨盘电机
 #define MOTOR_SLICE     3   //切割电机
+#define State_Rising	0x00000001
+#define State_Falling	0x00000003
 
 enum MotorState {
     Forward=1,

@@ -16,17 +16,11 @@
 #include "INA219.h"
 #include "i2c.h"
 #include "usart.h"
+#include "SR04.h"
 
 INA219_t ina219;
-enum KEYSTATE{
-    KeyPushed=1,
-    KeyReleased,
-    KeyShortPress,
-    KeyLongPress,
-    KeyNone
-};
 
-uint8_t KeyState=0;
+enum KEYSTATE KeyState=0;
 uint16_t Keytime=0;
 
 /**
@@ -43,9 +37,10 @@ void SenserThread_entry(void *parameter){
   {
     //数据接收
     INA219_ReadALL(&ina219);
-    rt_thread_delay(100);
+    rt_thread_delay(30);
     //rt_kprintf("voltage:%f %f %f\r\n", ina219.Voltage,ina219.Current,ina219.Power);
     // rt_kprintf("vbus:%f,currunt:%f,power:%f\r\n", ina219.voltage,ina219.current,ina219.power);
+    rt_kprintf("%f,%f,%f,%f\n",hsr04[FRONT_LEFT].distance,hsr04[FRONT_RIGHT].distance,hsr04[LEFT].distance,hsr04[RIGHT].distance);
     LED_Blink();
     if(KeyScan()==RT_TRUE){
       KeyState=KeyNone;
@@ -96,3 +91,8 @@ rt_bool_t KeyScan(void){
   }
   return RT_FALSE;
 }
+
+
+
+
+

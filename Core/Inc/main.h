@@ -81,12 +81,16 @@ void Error_Handler(void);
 #define CHRG_GPIO_Port GPIOB
 #define Echo1_Pin GPIO_PIN_12
 #define Echo1_GPIO_Port GPIOB
+#define Echo1_EXTI_IRQn EXTI15_10_IRQn
 #define Echo2_Pin GPIO_PIN_13
 #define Echo2_GPIO_Port GPIOB
+#define Echo2_EXTI_IRQn EXTI15_10_IRQn
 #define Echo3_Pin GPIO_PIN_14
 #define Echo3_GPIO_Port GPIOB
+#define Echo3_EXTI_IRQn EXTI15_10_IRQn
 #define Echo4_Pin GPIO_PIN_15
 #define Echo4_GPIO_Port GPIOB
+#define Echo4_EXTI_IRQn EXTI15_10_IRQn
 #define PWM1_Pin GPIO_PIN_8
 #define PWM1_GPIO_Port GPIOA
 #define PWM2_Pin GPIO_PIN_11

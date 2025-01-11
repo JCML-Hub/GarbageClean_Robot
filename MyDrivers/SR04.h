@@ -10,28 +10,22 @@
   * Description: SR04³¬Éù²¨Ä£¿éÇý¶¯
 ******************************************************************************
  */
-#ifndef INC_SR04_H_
-#define INC_SR04_H_
+#ifndef __SR04_H_
+#define __SR04_H_
 
 #include "main.h"
-#define State_Rising	0x00000001
-#define State_Falling	0x00000003
+
 
 #define FRONT_LEFT 0
 #define FRONT_RIGHT 1
 #define LEFT        2
 #define RIGHT       3
 
-enum HSR04_STATE{
-    Falling=1,
-    Rising
-};
 
 
 typedef struct{
-    enum HSR04_STATE state;
     float distance;
-    uint32_t tick;
+    uint32_t tickLast;
 }HSR04_Node_t;
 
 

@@ -6,6 +6,17 @@
 #define __SENSERTHREAD_H_
 
 #include "rtthread.h"
+#include "gpio.h"
+
+
+enum KEYSTATE{
+    KeyPushed=1,
+    KeyReleased,
+    KeyShortPress,
+    KeyLongPress,
+    KeyNone
+};
+
 
 void BuzzerBeep(void);
 void LED_Blink(void);
