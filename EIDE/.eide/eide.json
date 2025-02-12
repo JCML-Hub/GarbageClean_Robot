@@ -5,7 +5,11 @@
   "srcDirs": [],
   "virtualFolder": {
     "name": "<virtual_root>",
-    "files": [],
+    "files": [
+      {
+        "path": "../ReadMe.txt"
+      }
+    ],
     "folders": [
       {
         "name": "Application",
@@ -77,6 +81,9 @@
               },
               {
                 "path": "../MyDrivers/SR04.c"
+              },
+              {
+                "path": "../MyDrivers/Algorithm.c"
               }
             ],
             "folders": []
@@ -364,7 +371,7 @@
       "uploadConfig": {
         "bin": "",
         "target": "stm32f1x",
-        "interface": "stlink-v2-1",
+        "interface": "cmsis-dap",
         "baseAddr": "0x08000000"
       },
       "uploadConfigMap": {

@@ -71,8 +71,8 @@ int main(void)
 	rt_thread_startup(SenserThread);
 	// CommunicateThread = rt_thread_create("Communicate", SenserThread_entry, RT_NULL, 256, 6, 10);
 	// rt_thread_startup(CommunicateThread);
-  // MotorsThread = rt_thread_create("Motors", SenserThread_entry, RT_NULL, 256, 6, 10);
-	// rt_thread_startup(MotorsThread);
+  MotorsThread = rt_thread_create("Motors", MotorsThread_entry, RT_NULL, 1024, 6, 10);
+	rt_thread_startup(MotorsThread);
 }
 /* USER CODE END 0 */
 
@@ -141,7 +141,12 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     HAL_IncTick();
   }
   /* USER CODE BEGIN Callback 1 */
-
+  if (htim->Instance == TIM3) {
+    mpwms[0].updatetimes++;
+    mpwms[1].updatetimes++;
+    mpwms[2].updatetimes++;
+    mpwms[3].updatetimes++;
+  }
   /* USER CODE END Callback 1 */
 }
 

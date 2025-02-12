@@ -13,6 +13,7 @@
 "garbageclean_robot\communicatethread.o"
 "garbageclean_robot\motorsthread.o"
 "garbageclean_robot\ina219.o"
+"garbageclean_robot\algorithm.o"
 "garbageclean_robot\stm32f1xx_hal_gpio_ex.o"
 "garbageclean_robot\stm32f1xx_hal_i2c.o"
 "garbageclean_robot\stm32f1xx_hal.o"
