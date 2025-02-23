@@ -30,4 +30,4 @@ garbageclean_robot/main.o: ..\Core\Src\main.c ..\Core\Inc\main.h \
   ..\Middleware\RealThread_RTOS\include\rtdef.h \
   ..\Middleware\RealThread_RTOS\include\rtservice.h \
   ..\Thread\SenserThread.h ..\Thread\MotorsThread.h \
-  ..\Thread\CommunicateThread.h
+  ..\Thread\CommunicateThread.h ..\MyDrivers\SR04.h

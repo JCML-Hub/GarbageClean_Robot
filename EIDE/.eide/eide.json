@@ -84,6 +84,9 @@
               },
               {
                 "path": "../MyDrivers/Algorithm.c"
+              },
+              {
+                "path": "../MyDrivers/pid.c"
               }
             ],
             "folders": []

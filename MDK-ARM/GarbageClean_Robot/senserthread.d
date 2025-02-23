@@ -28,5 +28,5 @@ garbageclean_robot/senserthread.o: ..\Thread\SenserThread.c \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h \
-  ..\MyDrivers\INA219.h ..\Core\Inc\i2c.h ..\Core\Inc\usart.h \
-  ..\MyDrivers\SR04.h
+  ..\Thread\MotorsThread.h ..\MyDrivers\INA219.h ..\Core\Inc\i2c.h \
+  ..\Core\Inc\usart.h ..\MyDrivers\SR04.h ..\Core\Inc\tim.h

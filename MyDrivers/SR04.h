@@ -14,6 +14,7 @@
 #define __SR04_H_
 
 #include "main.h"
+#include "rtthread.h"
 
 
 #define FRONT_LEFT 0
@@ -24,13 +25,14 @@
 
 
 typedef struct{
+    rt_bool_t flag;
     float distance;
     uint32_t tickLast;
 }HSR04_Node_t;
 
-
-extern HSR04_Node_t hsr04[];
+volatile extern HSR04_Node_t hsr04[];
 
 void SR04_Init(void);
-
+void SR04_Read_Callback(uint16_t GPIO_Pin);
+void SR04_Read(float *distance);
 #endif /* INC_INA219_H_ */

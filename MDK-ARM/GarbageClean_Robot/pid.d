@@ -1,6 +1,5 @@
-garbageclean_robot/motorsthread.o: ..\Thread\MotorsThread.c \
-  ..\Thread\MotorsThread.h ..\Core\Inc\main.h \
-  ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h \
+garbageclean_robot/pid.o: ..\MyDrivers\pid.c ..\MyDrivers\pid.h \
+  ..\Core\Inc\main.h ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h \
   ..\Core\Inc\stm32f1xx_hal_conf.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_def.h \
@@ -23,10 +22,4 @@ garbageclean_robot/motorsthread.o: ..\Thread\MotorsThread.c \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h \
-  ..\Middleware\RealThread_RTOS\include\rtthread.h \
-  ..\Middleware\RealThread_RTOS\rtconfig.h \
-  ..\Middleware\RealThread_RTOS\include\rtdebug.h \
-  ..\Middleware\RealThread_RTOS\include\rtdef.h \
-  ..\Middleware\RealThread_RTOS\include\rtservice.h ..\Core\Inc\tim.h \
-  ..\MyDrivers\algorithm.h ..\MyDrivers\struct_typedef.h \
-  ..\MyDrivers\pid.h
+  ..\MyDrivers\struct_typedef.h

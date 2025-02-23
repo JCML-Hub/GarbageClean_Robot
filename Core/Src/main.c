@@ -30,6 +30,7 @@
 #include "SenserThread.h"
 #include "MotorsThread.h"
 #include "CommunicateThread.h"
+#include "SR04.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -141,11 +142,13 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     HAL_IncTick();
   }
   /* USER CODE BEGIN Callback 1 */
-  if (htim->Instance == TIM3) {
-    mpwms[0].updatetimes++;
-    mpwms[1].updatetimes++;
-    mpwms[2].updatetimes++;
-    mpwms[3].updatetimes++;
+  if(htim->Instance == TIM3)
+  {
+      // 所有通道溢出计数器+1
+      for(uint8_t i=0; i<4; i++){
+        //rt_kprintf("TIM3 overflow %d %d\n", i,pwm_data.overflow_cnt[i]);
+          pwm_data.overflow_cnt[i]++;
+      }
   }
   /* USER CODE END Callback 1 */
 }

@@ -11,15 +11,17 @@
 ******************************************************************************
  */
 #include "SenserThread.h"
+#include "MotorsThread.h"
 #include "main.h"
 #include "rtthread.h"
 #include "INA219.h"
 #include "i2c.h"
 #include "usart.h"
 #include "SR04.h"
+#include "tim.h"
 
 INA219_t ina219;
-
+float distance[4];
 enum KEYSTATE KeyState=0;
 uint16_t Keytime=0;
 
@@ -37,10 +39,11 @@ void SenserThread_entry(void *parameter){
   {
     //数据接收
     //INA219_ReadALL(&ina219);
+    SR04_Read(distance);
     rt_thread_delay(30);
     //rt_kprintf("voltage:%f %f %f\r\n", ina219.Voltage,ina219.Current,ina219.Power);
     // rt_kprintf("vbus:%f,currunt:%f,power:%f\r\n", ina219.voltage,ina219.current,ina219.power);
-    //rt_kprintf("%f,%f,%f,%f\n",hsr04[FRONT_LEFT].distance,hsr04[FRONT_RIGHT].distance,hsr04[LEFT].distance,hsr04[RIGHT].distance);
+    rt_kprintf("%.2f,%.2f,%.2f,%.2f\n",distance[FRONT_LEFT],distance[FRONT_RIGHT],distance[LEFT],distance[RIGHT]);
     LED_Blink();
     if(KeyScan()==RT_TRUE){
       KeyState=KeyNone;
@@ -48,6 +51,18 @@ void SenserThread_entry(void *parameter){
     }
   }
 }
+
+
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
+  rt_interrupt_enter();
+  if(GPIO_Pin > GPIO_PIN_8){//用于读取SR04超声波测距
+    SR04_Read_Callback(GPIO_Pin);
+  }else{
+    // Motor_Read_Callback(GPIO_Pin);
+  }
+  rt_interrupt_leave();
+}
+
 
 /**
  * @brief  蜂鸣器简单响一下
